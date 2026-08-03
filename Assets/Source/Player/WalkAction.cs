@@ -14,16 +14,32 @@ namespace Source.Player
         [SerializeReference] public BlackboardVariable<float> RotationSpeed = new(500f);
 
         private BehaviorInputReader _inputReader;
+        private CharacterController _characterController;
 
         protected override Status OnStart()
         {
             _inputReader = GameObject.GetComponent<BehaviorInputReader>();
+            _characterController = GameObject.GetComponent<CharacterController>();
             return Status.Running;
         }
 
         protected override Status OnUpdate()
         {
-            return _inputReader.MoveDirection != Vector2.zero ? Status.Running : Status.Success;
+            Vector2 input = _inputReader.MoveDirection;
+
+            if (input == Vector2.zero)
+            {
+                return Status.Success;
+            }
+
+            Vector3 direction = new(input.x, 0f, input.y);
+            _characterController.Move(direction * (Speed * Time.deltaTime));
+
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            GameObject.transform.rotation = Quaternion.RotateTowards(
+                GameObject.transform.rotation, targetRotation, RotationSpeed * Time.deltaTime);
+
+            return Status.Running;
         }
 
         protected override void OnEnd()
