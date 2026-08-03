@@ -35,8 +35,6 @@ Game scripts live under the `StealthGame` namespace (see `Tutorial_Demo/Demo_Scr
 - Scene (`.unity`), prefab (`.prefab`), and asset (`.asset`) files are Unity YAML. Prefer making scene/prefab changes through the Editor (via MCP) over hand-editing YAML.
 - `Library/`, `Temp/`, `Logs/`, and `UserSettings/` are generated and git-ignored — never edit or search them for project code.
 
-# Code Styles and Quality
+## Code Styles and Quality
 
-- Every C# file under `Assets/Source/` gets a namespace matching its directory relative to `Source` (e.g. `Source/Player/Combat` → `namespace Source.Player.Combat`).
-- Unless specified otherwise, assume every component is an empty class. Do not add methods, properties or fields.
-- Ignore any code inside the `_3DStealthGame` folder for any guidance on code formatting, quality and practices.
+@CODE_STYLE.md
