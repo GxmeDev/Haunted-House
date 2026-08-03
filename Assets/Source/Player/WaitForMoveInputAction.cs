@@ -4,23 +4,27 @@ using UnityEngine;
 using Action = Unity.Behavior.Action;
 using Unity.Properties;
 
-[Serializable, GeneratePropertyBag]
-[NodeDescription(name: "Wait For Move Input", story: "Waits for player movement", category: "Action", id: "8069ad62189b85511b87f1c041822c00")]
-public partial class WaitForMoveInputAction : Action
+namespace Source.Player
 {
-
-    protected override Status OnStart()
+    [Serializable, GeneratePropertyBag]
+    [NodeDescription(name: "Wait For Move Input", story: "Waits for player movement", category: "Action", id: "8069ad62189b85511b87f1c041822c00")]
+    public partial class WaitForMoveInputAction : Action
     {
-        return Status.Running;
-    }
+        private BehaviorInputReader _inputReader;
 
-    protected override Status OnUpdate()
-    {
-        return Status.Success;
-    }
+        protected override Status OnStart()
+        {
+            _inputReader = GameObject.GetComponent<BehaviorInputReader>();
+            return Status.Running;
+        }
 
-    protected override void OnEnd()
-    {
+        protected override Status OnUpdate()
+        {
+            return _inputReader.MoveDirection != Vector2.zero ? Status.Success : Status.Running;
+        }
+
+        protected override void OnEnd()
+        {
+        }
     }
 }
-
