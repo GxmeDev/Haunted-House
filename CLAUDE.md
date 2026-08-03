@@ -11,6 +11,7 @@ There is no CLI build/test workflow — compilation, play mode, and builds all h
 ## Unity MCP Tools
 
 A Unity MCP server is connected to the running Editor. Use it to:
+
 - `Unity_GetConsoleLogs` — check for compile errors and runtime logs after making changes
 - `Unity_RunCommand` — execute editor commands
 - `Unity_SceneView_Capture2DScene` / `CaptureMultiAngleSceneView` / `Unity_Camera_Capture` — visually inspect the scene
@@ -33,3 +34,9 @@ Game scripts live under the `StealthGame` namespace (see `Tutorial_Demo/Demo_Scr
 - Every asset and folder under `Assets/` has a paired `.meta` file containing its GUID. When creating, moving, renaming, or deleting assets, keep the `.meta` file in sync — never delete or regenerate one for an asset that is referenced elsewhere, or scene/prefab references will break.
 - Scene (`.unity`), prefab (`.prefab`), and asset (`.asset`) files are Unity YAML. Prefer making scene/prefab changes through the Editor (via MCP) over hand-editing YAML.
 - `Library/`, `Temp/`, `Logs/`, and `UserSettings/` are generated and git-ignored — never edit or search them for project code.
+
+# Code Styles and Quality
+
+- Every C# file under `Assets/Source/` gets a namespace matching its directory relative to `Source` (e.g. `Source/Player/Combat` → `namespace Source.Player.Combat`).
+- Unless specified otherwise, assume every component is an empty class. Do not add methods, properties or fields.
+- Ignore any code inside the `_3DStealthGame` folder for any guidance on code formatting, quality and practices.
