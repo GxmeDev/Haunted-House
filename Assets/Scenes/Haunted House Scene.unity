@@ -449,6 +449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 673253965}
+  - component: {fileID: 673253967}
   - component: {fileID: 673253966}
   m_Layer: 0
   m_Name: Player
@@ -485,6 +486,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26495b225801b644f98a4c1d19e385ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Source.Player.BehaviorInputReader
+--- !u!114 &673253967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673253964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Behavior::Unity.Behavior.BehaviorGraphAgent
+  m_Graph: {fileID: 6947930387426477164, guid: 375de6a99e3e5184482ec949bf594fa3, type: 2}
+  m_BlackboardVariableOverridesList:
+  - rid: 8285395245992247555
+  - rid: 8285395245992247654
+  m_OriginalGraph: {fileID: 6947930387426477164, guid: 375de6a99e3e5184482ec949bf594fa3, type: 2}
+  m_IsInitialised: 0
+  m_IsStarted: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 8285395245992247555
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 673253964}
+    - rid: 8285395245992247654
+      type: {class: 'BlackboardVariable`1[[System.String, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 11553178383664810443
+          m_Value1: 15044447624683350018
+        Name: currentState
+        m_Value: idle
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
