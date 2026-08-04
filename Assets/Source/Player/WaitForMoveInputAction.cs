@@ -11,10 +11,13 @@ namespace Source.Player
     public partial class WaitForMoveInputAction : Action
     {
         private BehaviorInputReader _inputReader;
+        private Animator _animator;
 
         protected override Status OnStart()
         {
             _inputReader = GameObject.GetComponent<BehaviorInputReader>();
+            _animator = GameObject.GetComponent<Animator>();
+            _animator.SetBool("IsWalking", false);
             return Status.Running;
         }
 

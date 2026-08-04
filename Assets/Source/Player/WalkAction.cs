@@ -15,11 +15,14 @@ namespace Source.Player
 
         private BehaviorInputReader _inputReader;
         private CharacterController _characterController;
+        private Animator _animator;
 
         protected override Status OnStart()
         {
             _inputReader = GameObject.GetComponent<BehaviorInputReader>();
             _characterController = GameObject.GetComponent<CharacterController>();
+            _animator = GameObject.GetComponent<Animator>();
+            _animator.SetBool("IsWalking", true);
             return Status.Running;
         }
 
