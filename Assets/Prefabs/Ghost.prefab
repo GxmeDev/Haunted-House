@@ -136,6 +136,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7205149451447509252, guid: 5454bd93185673349ada005ddd30a548, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6085835446738825816}
+    - targetCorrespondingSourceObject: {fileID: 7205149451447509252, guid: 5454bd93185673349ada005ddd30a548, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1719229058902016188}
   m_SourcePrefab: {fileID: 100100000, guid: 5454bd93185673349ada005ddd30a548, type: 3}
 --- !u!1 &2986414258665399642 stripped
 GameObject:
@@ -165,6 +168,19 @@ MonoBehaviour:
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
   m_StartOffset: 0
+--- !u!114 &1719229058902016188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986414258665399642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b71031457ddc614da4d692fbba762da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Source.Enemy.LookTowardSpline
+  _rotationSpeed: 300
 --- !u!4 &4987106498216619334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1133157085634554136, guid: 5454bd93185673349ada005ddd30a548, type: 3}
