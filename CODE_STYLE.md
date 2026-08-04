@@ -9,3 +9,4 @@
 - Fields or properties storing a component should be suffixed with `Component`. For example, if a field is storing an `Animator` component, the field should be called `_animatorComponent`.
 - Prefer to use hash IDs when working with animator parameters. Store the IDs in readonly fields.
 - Prefer to use `OnSetup()` for setting up components in the `Unity.Behavior.Action` class.
+- Prefer guard clauses over nested conditionals.
