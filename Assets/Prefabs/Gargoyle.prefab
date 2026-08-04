@@ -66,13 +66,34 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1133157085634554136, guid: 5454bd93185673349ada005ddd30a548, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1597784954902497459}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7205149451447509252, guid: 5454bd93185673349ada005ddd30a548, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1659517843039239405}
   m_SourcePrefab: {fileID: 100100000, guid: 5454bd93185673349ada005ddd30a548, type: 3}
 --- !u!4 &670279177149732314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1133157085634554136, guid: 5454bd93185673349ada005ddd30a548, type: 3}
   m_PrefabInstance: {fileID: 501173899689409730}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7280440715011562950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7205149451447509252, guid: 5454bd93185673349ada005ddd30a548, type: 3}
+  m_PrefabInstance: {fileID: 501173899689409730}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1659517843039239405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7280440715011562950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301fdb5a37954904ba74384f3e7659c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Source.Animations.YRotator
+  _rotationSpeed: 35
 --- !u!1001 &1597784954902368819
 PrefabInstance:
   m_ObjectHideFlags: 0
