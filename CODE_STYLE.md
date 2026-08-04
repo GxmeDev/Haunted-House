@@ -10,3 +10,5 @@
 - Prefer to use hash IDs when working with animator parameters. Store the IDs in readonly fields.
 - Prefer to use `OnSetup()` for setting up components in the `Unity.Behavior.Action` class.
 - Prefer guard clauses over nested conditionals.
+- Prefer `UnityAction` over `Action`, including for event types; always use the `event` keyword.
+- Every event gets a static `Raise<EventName>()` invoker method; handlers are named `On<EventName>`.

@@ -24,9 +24,23 @@ namespace Source.UI
             _panelRendererComponent.RegisterUIReloadCallback(OnUIReload);
         }
 
+        private void Start()
+        {
+            GameEvents.Caught += OnCaught;
+        }
+
         private void OnDestroy()
         {
             _panelRendererComponent.UnregisterUIReloadCallback(OnUIReload);
+
+            // GameEvents is static, so an un-removed handler would outlive this
+            // component and throw on the next Caught after a scene reload.
+            GameEvents.Caught -= OnCaught;
+        }
+
+        private void OnCaught()
+        {
+            StartCoroutine(FadeElement(CaughtScreen));
         }
 
         private void OnUIReload(PanelRenderer panelRenderer, VisualElement root, int version)

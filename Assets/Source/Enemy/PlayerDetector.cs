@@ -5,7 +5,7 @@ namespace Source.Enemy
     public class PlayerDetector : MonoBehaviour
     {
         // Tracks whether the player was visible on the previous sight check so
-        // the detection log fires once per sighting instead of every physics step.
+        // the Caught event fires once per sighting instead of every physics step.
         private bool _isPlayerVisible;
 
         // The enemy body's solid collider on the parent object; the sight line
@@ -32,12 +32,13 @@ namespace Source.Enemy
                 return;
             }
 
-            // Already spotted during this sighting; don't spam the console.
+            // Already spotted during this sighting; don't re-raise the event
+            // every physics step while the player stays in view.
             if (_isPlayerVisible)
                 return;
 
             _isPlayerVisible = true;
-            Debug.Log($"{name} detected the player!");
+            GameEvents.RaiseCaught();
         }
 
         private void OnTriggerExit(Collider other)
