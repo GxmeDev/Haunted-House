@@ -610,6 +610,7 @@ GameObject:
   - component: {fileID: 673253967}
   - component: {fileID: 673253968}
   - component: {fileID: 673253966}
+  - component: {fileID: 673253969}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -660,7 +661,6 @@ MonoBehaviour:
   m_Graph: {fileID: 6947930387426477164, guid: 375de6a99e3e5184482ec949bf594fa3, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 8285395245992247555
-  - rid: 8285395245992247815
   m_OriginalGraph: {fileID: 6947930387426477164, guid: 375de6a99e3e5184482ec949bf594fa3, type: 2}
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -675,14 +675,6 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 673253964}
-    - rid: 8285395245992247815
-      type: {class: 'BlackboardVariable`1[[System.String, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 11553178383664810443
-          m_Value1: 15044447624683350018
-        Name: currentState
-        m_Value: IDLE
 --- !u!143 &673253968
 CharacterController:
   m_ObjectHideFlags: 0
@@ -708,6 +700,28 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.75, z: 0}
+--- !u!95 &673253969
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673253964}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 4d7b34bc56da58746ab5ca5a13fe1685, type: 3}
+  m_Controller: {fileID: 9100000, guid: 125d3f71c2e7faf4cb375103b484d93e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

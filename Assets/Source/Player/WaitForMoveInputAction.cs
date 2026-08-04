@@ -10,20 +10,26 @@ namespace Source.Player
     [NodeDescription(name: "Wait For Move Input", story: "Waits for player movement", category: "Action", id: "8069ad62189b85511b87f1c041822c00")]
     public partial class WaitForMoveInputAction : Action
     {
-        private BehaviorInputReader _inputReader;
-        private Animator _animator;
+        private readonly int _isWalkingHash = Animator.StringToHash("IsWalking");
+
+        private BehaviorInputReader _inputReaderComponent;
+        private Animator _animatorComponent;
+
+        protected override void OnSetup()
+        {
+            _inputReaderComponent = GameObject.GetComponent<BehaviorInputReader>();
+            _animatorComponent = GameObject.GetComponent<Animator>();
+        }
 
         protected override Status OnStart()
         {
-            _inputReader = GameObject.GetComponent<BehaviorInputReader>();
-            _animator = GameObject.GetComponent<Animator>();
-            _animator.SetBool("IsWalking", false);
+            _animatorComponent.SetBool(_isWalkingHash, false);
             return Status.Running;
         }
 
         protected override Status OnUpdate()
         {
-            return _inputReader.MoveDirection != Vector2.zero ? Status.Success : Status.Running;
+            return _inputReaderComponent.MoveDirection != Vector2.zero ? Status.Success : Status.Running;
         }
 
         protected override void OnEnd()

@@ -13,22 +13,28 @@ namespace Source.Player
         [SerializeReference] public BlackboardVariable<float> Speed = new(2f);
         [SerializeReference] public BlackboardVariable<float> RotationSpeed = new(500f);
 
-        private BehaviorInputReader _inputReader;
-        private CharacterController _characterController;
-        private Animator _animator;
+        private readonly int _isWalkingHash = Animator.StringToHash("IsWalking");
+
+        private BehaviorInputReader _inputReaderComponent;
+        private CharacterController _characterControllerComponent;
+        private Animator _animatorComponent;
+
+        protected override void OnSetup()
+        {
+            _inputReaderComponent = GameObject.GetComponent<BehaviorInputReader>();
+            _characterControllerComponent = GameObject.GetComponent<CharacterController>();
+            _animatorComponent = GameObject.GetComponent<Animator>();
+        }
 
         protected override Status OnStart()
         {
-            _inputReader = GameObject.GetComponent<BehaviorInputReader>();
-            _characterController = GameObject.GetComponent<CharacterController>();
-            _animator = GameObject.GetComponent<Animator>();
-            _animator.SetBool("IsWalking", true);
+            _animatorComponent.SetBool(_isWalkingHash, true);
             return Status.Running;
         }
 
         protected override Status OnUpdate()
         {
-            Vector2 input = _inputReader.MoveDirection;
+            Vector2 input = _inputReaderComponent.MoveDirection;
 
             if (input == Vector2.zero)
             {
@@ -36,7 +42,7 @@ namespace Source.Player
             }
 
             Vector3 direction = new(input.x, 0f, input.y);
-            _characterController.Move(direction * (Speed * Time.deltaTime));
+            _characterControllerComponent.Move(direction * (Speed * Time.deltaTime));
 
             Quaternion targetRotation = Quaternion.LookRotation(direction);
             GameObject.transform.rotation = Quaternion.RotateTowards(
