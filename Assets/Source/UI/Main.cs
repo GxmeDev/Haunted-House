@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -5,6 +6,9 @@ namespace Source.UI
 {
     public class Main : MonoBehaviour
     {
+        [SerializeField] private float _fadeDuration = 1f;
+        [SerializeField] private float _resetWaitTime = 2f;
+
         public VisualElement EndScreen { get; private set; }
         public VisualElement CaughtScreen { get; private set; }
 
@@ -29,10 +33,26 @@ namespace Source.UI
         {
             EndScreen = root.Q<VisualElement>("EndScreen");
             CaughtScreen = root.Q<VisualElement>("CaughtScreen");
+        }
 
-            // Verification logging: null here means the ID doesn't exist in the UXML.
-            Debug.Log($"EndScreen: {EndScreen}");
-            Debug.Log($"CaughtScreen: {CaughtScreen}");
+        private IEnumerator FadeElement(VisualElement element)
+        {
+            // Ramp the opacity up each frame so the element fades into full
+            // visibility over _fadeDuration seconds.
+            float elapsed = 0f;
+
+            while (elapsed < _fadeDuration)
+            {
+                elapsed += Time.deltaTime;
+                element.style.opacity = Mathf.Clamp01(elapsed / _fadeDuration);
+                yield return null;
+            }
+
+            // Hold the fully visible element on screen, then hide it instantly
+            // (no fade-out) so it's ready for the next fade-in.
+            yield return new WaitForSeconds(_resetWaitTime);
+
+            element.style.opacity = 0f;
         }
     }
 }
