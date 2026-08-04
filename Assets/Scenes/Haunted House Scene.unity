@@ -682,7 +682,7 @@ MonoBehaviour:
           m_Value0: 11553178383664810443
           m_Value1: 15044447624683350018
         Name: currentState
-        m_Value: idle
+        m_Value: IDLE
 --- !u!143 &673253968
 CharacterController:
   m_ObjectHideFlags: 0
