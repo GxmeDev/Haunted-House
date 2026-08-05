@@ -29,6 +29,14 @@ namespace Source.Player
             GameEvents.FadeScreenReset -= OnFadeScreenReset;
         }
 
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            // Let whatever the player bumped into react (e.g. an unlocked door
+            // opening). Most hits are floors and walls with no receiver, so
+            // DontRequireReceiver keeps those from logging errors.
+            hit.gameObject.SendMessage("OnPlayerCollision", SendMessageOptions.DontRequireReceiver);
+        }
+
         private void OnCaught()
         {
             // Disabling the CharacterController freezes the player in place — the

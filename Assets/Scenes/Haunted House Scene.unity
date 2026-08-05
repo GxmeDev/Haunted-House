@@ -810,6 +810,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2315660663495927502, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 633567330}
+    - targetCorrespondingSourceObject: {fileID: 2315660663495927502, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 633567334}
   m_SourcePrefab: {fileID: 100100000, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
 --- !u!1 &633567329 stripped
 GameObject:
@@ -829,6 +832,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Source.Puzzle.Door
   _keyData: {fileID: 11400000, guid: 53d4f82cdd60a394c90963f8596d58fa, type: 2}
+--- !u!65 &633567334
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633567329}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.314822, y: 1.8427, z: 0.15520418}
+  m_Center: {x: 0.0036889613, y: 0.92855, z: 0.1795021}
 --- !u!1 &673253964
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +952,7 @@ CharacterController:
   m_Height: 1.5
   m_Radius: 0.3
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.75, z: 0}
@@ -1046,6 +1070,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1842708414955614, guid: 141a3c088bae48f42a579375904a411c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 817225948}
+    - targetCorrespondingSourceObject: {fileID: 1842708414955614, guid: 141a3c088bae48f42a579375904a411c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 817225951}
   m_SourcePrefab: {fileID: 100100000, guid: 141a3c088bae48f42a579375904a411c, type: 3}
 --- !u!4 &817225946 stripped
 Transform:
@@ -1070,6 +1097,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Source.Puzzle.Door
   _keyData: {fileID: 11400000, guid: d210ea9c1b4ebf34ab8d4d160e4b7fbb, type: 2}
+--- !u!65 &817225951
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817225947}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.3148223, y: 1.8427, z: 0.1552042}
+  m_Center: {x: 0.0036892006, y: 0.92855, z: 0.17950256}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
