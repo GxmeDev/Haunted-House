@@ -742,6 +742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2483074810619542395}
+  - component: {fileID: 7217650579899728612}
   m_Layer: 0
   m_Name: Frankenstein
   m_TagString: Untagged
@@ -766,6 +767,24 @@ Transform:
   - {fileID: 7877160673714236000}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7217650579899728612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3760185530134036085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc77bc3020f4054982c132cbfe71f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Source.NPC.Dialogue
+  _characterName: Frankenstein
+  _characterNameColor: {r: 0.15299575, g: 0.81671154, b: 0.21205296, a: 1}
+  _dialogueText:
+  - Wow! You finally found me.
+  - I've been stuck here all day.
+  - Let's get out of here!!!
 --- !u!1 &3861910745523345420
 GameObject:
   m_ObjectHideFlags: 0
