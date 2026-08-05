@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 namespace Source.UI
@@ -11,12 +13,19 @@ namespace Source.UI
 
         public VisualElement EndScreen { get; private set; }
         public VisualElement CaughtScreen { get; private set; }
+        public VisualElement DialogueBox { get; private set; }
+        public Label CharacterNameLabel { get; private set; }
+        public Label DialogueTextLabel { get; private set; }
 
         private PanelRenderer _panelRendererComponent;
+        private List<string> _dialogueText;
+        private InputAction _interactAction;
+        private int _dialogueIndex;
 
         private void Awake()
         {
             _panelRendererComponent = GetComponent<PanelRenderer>();
+            _interactAction = InputSystem.actions.FindAction("Player/Interact");
 
             // PanelRenderer has no root-element property; the reload callback is
             // the documented way to get the root, and it also re-runs the queries
@@ -27,6 +36,7 @@ namespace Source.UI
         private void Start()
         {
             GameEvents.Caught += OnCaught;
+            GameEvents.StartDialogue += OnStartDialogue;
         }
 
         private void OnDestroy()
@@ -36,6 +46,11 @@ namespace Source.UI
             // GameEvents is static, so an un-removed handler would outlive this
             // component and throw on the next Caught after a scene reload.
             GameEvents.Caught -= OnCaught;
+            GameEvents.StartDialogue -= OnStartDialogue;
+
+            // A mid-dialogue scene teardown must not leave a dangling handler
+            // on the shared Interact action; removing when absent is harmless.
+            _interactAction.performed -= OnInteractPerformed;
         }
 
         private void OnCaught()
@@ -47,6 +62,47 @@ namespace Source.UI
         {
             EndScreen = root.Q<VisualElement>("EndScreen");
             CaughtScreen = root.Q<VisualElement>("CaughtScreen");
+            DialogueBox = root.Q<VisualElement>("DialogueBox");
+            CharacterNameLabel = root.Q<Label>("CharacterName");
+            DialogueTextLabel = root.Q<Label>("DialogueText");
+        }
+
+        private void OnStartDialogue(string characterName, Color characterNameColor, List<string> dialogueText)
+        {
+            // The dialogue box ships hidden (display: none in MainUI.uxml), so
+            // it's shown via display rather than opacity.
+            DialogueBox.style.display = DisplayStyle.Flex;
+            CharacterNameLabel.text = characterName;
+            CharacterNameLabel.style.color = characterNameColor;
+
+            // Copy the lines so advancing through them later can't be affected
+            // by (or mutate) the NPC's serialized list.
+            _dialogueText = new List<string>(dialogueText);
+            _dialogueIndex = 0;
+            DialogueTextLabel.text = _dialogueText[_dialogueIndex];
+
+            // Advance one line per Interact press. The Input System defers
+            // callback-list changes made during invocation, so subscribing here
+            // (inside the same E press that started the dialogue) does not fire
+            // OnInteractPerformed for that press.
+            _interactAction.performed += OnInteractPerformed;
+        }
+
+        private void OnInteractPerformed(InputAction.CallbackContext context)
+        {
+            _dialogueIndex++;
+
+            // All lines rendered: close the conversation and stop listening
+            // until the next StartDialogue re-subscribes.
+            if (_dialogueIndex >= _dialogueText.Count)
+            {
+                DialogueBox.style.display = DisplayStyle.None;
+                _interactAction.performed -= OnInteractPerformed;
+                GameEvents.RaiseExitDialogue();
+                return;
+            }
+
+            DialogueTextLabel.text = _dialogueText[_dialogueIndex];
         }
 
         private IEnumerator FadeElement(VisualElement element)

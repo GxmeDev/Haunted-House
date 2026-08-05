@@ -743,6 +743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2483074810619542395}
   - component: {fileID: 7217650579899728612}
+  - component: {fileID: 2175876648306358051}
   m_Layer: 0
   m_Name: Frankenstein
   m_TagString: Untagged
@@ -785,6 +786,27 @@ MonoBehaviour:
   - Wow! You finally found me.
   - I've been stuck here all day.
   - Let's get out of here!!!
+--- !u!135 &2175876648306358051
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3760185530134036085}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3861910745523345420
 GameObject:
   m_ObjectHideFlags: 0
