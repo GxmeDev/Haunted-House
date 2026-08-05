@@ -14,10 +14,21 @@ namespace Source.Player
             _moveAction = InputSystem.actions.FindAction("Player/Move");
             _moveAction.performed += OnMovePerformed;
             _moveAction.canceled += OnMoveCanceled;
+            GameEvents.Caught += OnCaught;
         }
 
         private void OnDisable()
         {
+            _moveAction.performed -= OnMovePerformed;
+            _moveAction.canceled -= OnMoveCanceled;
+            GameEvents.Caught -= OnCaught;
+        }
+
+        private void OnCaught()
+        {
+            // Once caught, clear the current input and stop listening to the Move
+            // action so the behavior graph no longer sees any movement input.
+            MoveDirection = Vector2.zero;
             _moveAction.performed -= OnMovePerformed;
             _moveAction.canceled -= OnMoveCanceled;
         }
