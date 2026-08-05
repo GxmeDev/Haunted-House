@@ -806,8 +806,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2634983877173164029, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 817225946}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2315660663495927502, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 633567330}
   m_SourcePrefab: {fileID: 100100000, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+--- !u!1 &633567329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2315660663495927502, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+  m_PrefabInstance: {fileID: 633567328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &633567330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633567329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c2cabbd436fa804b8fd33658f352d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Source.Puzzle.Door
+  _keyData: {fileID: 11400000, guid: 53d4f82cdd60a394c90963f8596d58fa, type: 2}
 --- !u!1 &673253964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,16 +1035,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23165171284680928, guid: 141a3c088bae48f42a579375904a411c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59e02a2a0a8ea524e981dcb13e887490, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1842708414955614, guid: 141a3c088bae48f42a579375904a411c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 817225948}
   m_SourcePrefab: {fileID: 100100000, guid: 141a3c088bae48f42a579375904a411c, type: 3}
 --- !u!4 &817225946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4669364078677402, guid: 141a3c088bae48f42a579375904a411c, type: 3}
   m_PrefabInstance: {fileID: 817225945}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &817225947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1842708414955614, guid: 141a3c088bae48f42a579375904a411c, type: 3}
+  m_PrefabInstance: {fileID: 817225945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &817225948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817225947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c2cabbd436fa804b8fd33658f352d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Source.Puzzle.Door
+  _keyData: {fileID: 11400000, guid: d210ea9c1b4ebf34ab8d4d160e4b7fbb, type: 2}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

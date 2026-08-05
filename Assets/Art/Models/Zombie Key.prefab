@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4792793963229889888}
   - component: {fileID: 7855019850062308805}
   - component: {fileID: 8157829555526054448}
+  - component: {fileID: 4100340752520783218}
   m_Layer: 0
   m_Name: Zombie Key
   m_TagString: Untagged
@@ -194,3 +195,16 @@ CapsuleCollider:
   m_Height: 1.172263
   m_Direction: 1
   m_Center: {x: 0.009126499, y: 0.5861315, z: -0.066456005}
+--- !u!114 &4100340752520783218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3286402804548313139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e430734c609254e87ca986afe08f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Source.Puzzle.Key
+  _keyData: {fileID: 11400000, guid: 53d4f82cdd60a394c90963f8596d58fa, type: 2}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8780338947531341651}
   - component: {fileID: 3835744472006534037}
   - component: {fileID: 4374956070029127179}
+  - component: {fileID: 3021979232585385282}
   m_Layer: 0
   m_Name: Mummy Key
   m_TagString: Untagged
@@ -194,3 +195,16 @@ CapsuleCollider:
   m_Height: 1.196765
   m_Direction: 1
   m_Center: {x: -0.0029845014, y: 0.5983825, z: -0.011045001}
+--- !u!114 &3021979232585385282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908527712808443080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e430734c609254e87ca986afe08f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Source.Puzzle.Key
+  _keyData: {fileID: 11400000, guid: d210ea9c1b4ebf34ab8d4d160e4b7fbb, type: 2}
