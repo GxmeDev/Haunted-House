@@ -19,6 +19,7 @@ namespace Source.Player
             GameEvents.FadeScreenReset += OnFadeScreenReset;
             GameEvents.StartDialogue += OnStartDialogue;
             GameEvents.ExitDialogue += OnExitDialogue;
+            GameEvents.Escaped += OnEscaped;
         }
 
         private void OnDisable()
@@ -29,6 +30,7 @@ namespace Source.Player
             GameEvents.FadeScreenReset -= OnFadeScreenReset;
             GameEvents.StartDialogue -= OnStartDialogue;
             GameEvents.ExitDialogue -= OnExitDialogue;
+            GameEvents.Escaped -= OnEscaped;
         }
 
         private void OnCaught()
@@ -63,6 +65,15 @@ namespace Source.Player
             // the player regains control (OnStartDialogue removed these handlers).
             _moveAction.performed += OnMovePerformed;
             _moveAction.canceled += OnMoveCanceled;
+        }
+
+        private void OnEscaped()
+        {
+            // The player reached the finish line — clear the current input and stop
+            // listening to the Move action so they stand still during the end screen.
+            MoveDirection = Vector2.zero;
+            _moveAction.performed -= OnMovePerformed;
+            _moveAction.canceled -= OnMoveCanceled;
         }
 
         private void OnMovePerformed(InputAction.CallbackContext context)

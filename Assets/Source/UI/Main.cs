@@ -37,6 +37,7 @@ namespace Source.UI
         {
             GameEvents.Caught += OnCaught;
             GameEvents.StartDialogue += OnStartDialogue;
+            GameEvents.Escaped += OnEscaped;
         }
 
         private void OnDestroy()
@@ -47,6 +48,7 @@ namespace Source.UI
             // component and throw on the next Caught after a scene reload.
             GameEvents.Caught -= OnCaught;
             GameEvents.StartDialogue -= OnStartDialogue;
+            GameEvents.Escaped -= OnEscaped;
 
             // A mid-dialogue scene teardown must not leave a dangling handler
             // on the shared Interact action; removing when absent is harmless.
@@ -56,6 +58,11 @@ namespace Source.UI
         private void OnCaught()
         {
             StartCoroutine(FadeElement(CaughtScreen));
+        }
+
+        private void OnEscaped()
+        {
+            StartCoroutine(FadeElement(EndScreen));
         }
 
         private void OnUIReload(PanelRenderer panelRenderer, VisualElement root, int version)
@@ -117,6 +124,11 @@ namespace Source.UI
                 element.style.opacity = Mathf.Clamp01(elapsed / _fadeDuration);
                 yield return null;
             }
+
+            // The end screen is the win state: the game is over, so skip the
+            // respawn events and the reset — the screen stays up permanently.
+            if (element == EndScreen)
+                yield break;
 
             // The element is now fully visible — let listeners react (e.g. respawn
             // the player) while the screen still covers the reset.

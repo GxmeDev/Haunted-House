@@ -12,6 +12,7 @@ public static class GameEvents
     public static event UnityAction<KeySO> Unlock;
     public static event UnityAction<string, Color, List<string>> StartDialogue;
     public static event UnityAction ExitDialogue;
+    public static event UnityAction Escaped;
 
     public static void RaiseJump()
     {
@@ -46,5 +47,10 @@ public static class GameEvents
     public static void RaiseExitDialogue()
     {
         ExitDialogue.Invoke();
+    }
+
+    public static void RaiseEscaped()
+    {
+        Escaped.Invoke();
     }
 }
