@@ -549,9 +549,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 358139472760508019, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 863292486510481999, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 893428837089823605, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1209539686732796716, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
       propertyPath: m_Name
       value: Level A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415570339973312211, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478126915941776586, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333747000753983482, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586475615561939773, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157256642837762426, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202025479800199442, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513916312809682475, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3590320056735078301, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -592,6 +632,94 @@ PrefabInstance:
     - target: {fileID: 3590320056735078301, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659780497015782028, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248866143351279513, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299214220563887634, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661660977724689351, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778822826887098675, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911392523556641480, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407513830371141971, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607394468358227232, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631864380146863269, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143069971326854208, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746348181574569424, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797806891226359565, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916514794726905909, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923625737599885872, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217792558985903419, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259079200350443018, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582719881053465556, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628278661530783761, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893521785906962358, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436458005396641241, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793824169624376765, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960833486499066305, guid: c126d90fa1fe4ac4abcc6e249c724bf0, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
