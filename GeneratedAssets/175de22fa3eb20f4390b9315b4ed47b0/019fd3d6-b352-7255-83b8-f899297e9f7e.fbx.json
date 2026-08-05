@@ -1,0 +1,12 @@
+{
+    "asset": "175de22fa3eb20f4390b9315b4ed47b0",
+    "fileName": "019fd3d6-b352-7255-83b8-f899297e9f7e.fbx",
+    "prompt": "Frightened, scared, hands covering face, shivering, shaking.",
+    "negativePrompt": "",
+    "model": "uthana-text-to-motion-3",
+    "modelName": "Uthana Text to Motion 3.0",
+    "customSeed": 2136173416,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "isTrimmed": false
+}
