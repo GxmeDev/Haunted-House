@@ -4,6 +4,8 @@ public static class GameEvents
 {
     public static event UnityAction Jump;
     public static event UnityAction Caught;
+    public static event UnityAction FadeInComplete;
+    public static event UnityAction FadeScreenReset;
 
     public static void RaiseJump()
     {
@@ -13,5 +15,15 @@ public static class GameEvents
     public static void RaiseCaught()
     {
         Caught.Invoke();
+    }
+
+    public static void RaiseFadeInComplete()
+    {
+        FadeInComplete.Invoke();
+    }
+
+    public static void RaiseFadeScreenReset()
+    {
+        FadeScreenReset.Invoke();
     }
 }

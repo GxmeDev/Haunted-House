@@ -19,6 +19,24 @@ namespace Source.Enemy
             _parentColliderComponent = transform.parent.GetComponent<Collider>();
         }
 
+        private void OnEnable()
+        {
+            GameEvents.FadeScreenReset += OnFadeScreenReset;
+        }
+
+        private void OnDisable()
+        {
+            GameEvents.FadeScreenReset -= OnFadeScreenReset;
+        }
+
+        private void OnFadeScreenReset()
+        {
+            // The player was teleported back to the start while their collider was
+            // disabled, so no OnTriggerExit ever fires for the respawn — reset the
+            // sighting flag here or this detector could never raise Caught again.
+            _isPlayerVisible = false;
+        }
+
         private void OnTriggerStay(Collider other)
         {
             // Only the player should trip the detector; ignore other enemies,

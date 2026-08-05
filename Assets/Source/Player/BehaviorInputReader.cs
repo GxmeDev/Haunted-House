@@ -15,6 +15,7 @@ namespace Source.Player
             _moveAction.performed += OnMovePerformed;
             _moveAction.canceled += OnMoveCanceled;
             GameEvents.Caught += OnCaught;
+            GameEvents.FadeScreenReset += OnFadeScreenReset;
         }
 
         private void OnDisable()
@@ -22,6 +23,7 @@ namespace Source.Player
             _moveAction.performed -= OnMovePerformed;
             _moveAction.canceled -= OnMoveCanceled;
             GameEvents.Caught -= OnCaught;
+            GameEvents.FadeScreenReset -= OnFadeScreenReset;
         }
 
         private void OnCaught()
@@ -31,6 +33,14 @@ namespace Source.Player
             MoveDirection = Vector2.zero;
             _moveAction.performed -= OnMovePerformed;
             _moveAction.canceled -= OnMoveCanceled;
+        }
+
+        private void OnFadeScreenReset()
+        {
+            // The respawn finished — start listening to the Move action again so
+            // the player regains control (OnCaught removed these handlers).
+            _moveAction.performed += OnMovePerformed;
+            _moveAction.canceled += OnMoveCanceled;
         }
 
         private void OnMovePerformed(InputAction.CallbackContext context)

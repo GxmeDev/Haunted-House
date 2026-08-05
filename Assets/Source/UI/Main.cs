@@ -62,11 +62,19 @@ namespace Source.UI
                 yield return null;
             }
 
+            // The element is now fully visible — let listeners react (e.g. respawn
+            // the player) while the screen still covers the reset.
+            GameEvents.RaiseFadeInComplete();
+
             // Hold the fully visible element on screen, then hide it instantly
             // (no fade-out) so it's ready for the next fade-in.
             yield return new WaitForSeconds(_resetWaitTime);
 
             element.style.opacity = 0f;
+
+            // The screen is hidden again — let listeners restore player control
+            // now that the respawn is fully over.
+            GameEvents.RaiseFadeScreenReset();
         }
     }
 }

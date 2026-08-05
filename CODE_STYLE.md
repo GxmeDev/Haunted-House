@@ -12,3 +12,4 @@
 - Prefer guard clauses over nested conditionals.
 - Prefer `UnityAction` over `Action`, including for event types; always use the `event` keyword.
 - Every event gets a static `Raise<EventName>()` invoker method; handlers are named `On<EventName>`.
+- Do not update the scene in the game unless explicitily told to do so.
