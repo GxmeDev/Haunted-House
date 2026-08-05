@@ -1,8 +1,12 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <engine:VisualElement name="EndScreen" style="flex-grow: 1; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: none; background-color: rgb(0, 0, 0); opacity: 0;">
-        <engine:VisualElement name="Visual" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/_3DStealthGame/Art/Textures/UI/Won%20Screen.png?fileID=21300000&amp;guid=3db33661dbbdaaa49ba54408899d20cb&amp;type=3#Won Screen&quot;); -unity-background-scale-mode: scale-to-fit;" />
+        <engine:VisualElement name="Visual" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/_3DStealthGame/Art/Textures/UI/Won%20Screen.png?fileID=21300000&amp;guid=3db33661dbbdaaa49ba54408899d20cb&amp;type=3#Won Screen&quot;); -unity-background-scale-mode: scale-to-fit;"/>
     </engine:VisualElement>
     <engine:VisualElement name="CaughtScreen" style="flex-grow: 1; top: 0; left: 0; right: 0; bottom: 0; background-color: rgb(0, 0, 0); opacity: 0;">
-        <engine:VisualElement name="Visual" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/_3DStealthGame/Art/Textures/UI/Caught%20Screen.png?fileID=21300000&amp;guid=2942309166a418a4c8ac2d569a8b14b9&amp;type=3#Caught Screen&quot;); -unity-background-scale-mode: scale-to-fit;" />
+        <engine:VisualElement name="Visual" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/_3DStealthGame/Art/Textures/UI/Caught%20Screen.png?fileID=21300000&amp;guid=2942309166a418a4c8ac2d569a8b14b9&amp;type=3#Caught Screen&quot;); -unity-background-scale-mode: scale-to-fit;"/>
+    </engine:VisualElement>
+    <engine:VisualElement name="DialogueBox" style="position: absolute; left: 24px; right: 24px; bottom: 24px; padding-top: 16px; padding-bottom: 16px; padding-left: 20px; padding-right: 20px; background-color: rgba(0, 0, 0, 0.75); -unity-font-definition: url(&quot;project://database/Assets/_3DStealthGame/Art/Fonts/Underdog-Regular.ttf?fileID=12800000&amp;guid=631c4d05de2994134bae4af150a31b9f&amp;type=3#Underdog-Regular&quot;); display: none;">
+        <engine:Label name="CharacterName" text="Character Name" style="font-size: 28px; color: rgb(255, 255, 255); -unity-font-style: bold;"/>
+        <engine:Label name="DialogueText" text="Dialogue body text goes here." style="font-size: 20px; color: rgb(255, 255, 255); white-space: normal;"/>
     </engine:VisualElement>
 </engine:UXML>
