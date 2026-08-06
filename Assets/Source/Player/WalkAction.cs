@@ -18,17 +18,20 @@ namespace Source.Player
         private BehaviorInputReader _inputReaderComponent;
         private CharacterController _characterControllerComponent;
         private Animator _animatorComponent;
+        private AudioSource _audioSourceComponent;
 
         protected override void OnSetup()
         {
             _inputReaderComponent = GameObject.GetComponent<BehaviorInputReader>();
             _characterControllerComponent = GameObject.GetComponent<CharacterController>();
             _animatorComponent = GameObject.GetComponent<Animator>();
+            _audioSourceComponent = GameObject.GetComponent<AudioSource>();
         }
 
         protected override Status OnStart()
         {
             _animatorComponent.SetBool(_isWalkingHash, true);
+            _audioSourceComponent.Play();
             return Status.Running;
         }
 
