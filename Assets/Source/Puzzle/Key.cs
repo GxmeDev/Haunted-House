@@ -15,6 +15,16 @@ namespace Source.Puzzle
             _meshRendererComponent = GetComponent<MeshRenderer>();
         }
 
+        private void OnEnable()
+        {
+            GameEvents.Caught += OnCaught;
+        }
+
+        private void OnDisable()
+        {
+            GameEvents.Caught -= OnCaught;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             // Only the player can pick up keys; ignore enemies or props
@@ -28,6 +38,14 @@ namespace Source.Puzzle
             // be picked up a second time.
             _colliderComponent.enabled = false;
             _meshRendererComponent.enabled = false;
+        }
+
+        private void OnCaught()
+        {
+            // Being caught resets the level: the key reappears and can be
+            // collected again.
+            _colliderComponent.enabled = true;
+            _meshRendererComponent.enabled = true;
         }
     }
 }

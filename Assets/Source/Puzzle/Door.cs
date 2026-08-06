@@ -22,11 +22,13 @@ namespace Source.Puzzle
         private void OnEnable()
         {
             GameEvents.Unlock += OnUnlock;
+            GameEvents.Caught += OnCaught;
         }
 
         private void OnDisable()
         {
             GameEvents.Unlock -= OnUnlock;
+            GameEvents.Caught -= OnCaught;
         }
 
         // Invoked via SendMessage from PlayerController when the player's
@@ -54,6 +56,15 @@ namespace Source.Puzzle
                 return;
 
             _unlocked = true;
+        }
+
+        private void OnCaught()
+        {
+            // Being caught resets the level: the door closes and locks again,
+            // so the player must re-collect its key.
+            _colliderComponent.enabled = true;
+            _meshRendererComponent.enabled = true;
+            _unlocked = false;
         }
     }
 }

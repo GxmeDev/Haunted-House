@@ -23,16 +23,25 @@ namespace Source
         private void OnEnable()
         {
             GameEvents.ExitDialogue += OnExitDialogue;
+            GameEvents.Caught += OnCaught;
         }
 
         private void OnDisable()
         {
             GameEvents.ExitDialogue -= OnExitDialogue;
+            GameEvents.Caught -= OnCaught;
         }
 
         private void OnExitDialogue()
         {
             _colliderComponent.enabled = true;
+        }
+
+        private void OnCaught()
+        {
+            // Being caught resets the level: the finish line becomes
+            // unreachable until the NPC dialogue is completed again.
+            _colliderComponent.enabled = false;
         }
 
         private void OnTriggerEnter(Collider other)
