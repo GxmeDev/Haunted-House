@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Source.Enemy
 {
+    [RequireComponent(typeof(AudioSource))]
     public class PlayerDetector : MonoBehaviour
     {
         // Tracks whether the player was visible on the previous sight check so
@@ -12,11 +13,16 @@ namespace Source.Enemy
         // is shot from its center rather than this field-of-view child's pivot.
         private Collider _parentColliderComponent;
 
+        // Plays the "caught" sting when the enemy spots the player.
+        private AudioSource _audioSourceComponent;
+
         private void Awake()
         {
             // GetComponentInParent would find this object's own trigger capsule
             // first, so ask the parent directly for the enemy's body collider.
             _parentColliderComponent = transform.parent.GetComponent<Collider>();
+
+            _audioSourceComponent = GetComponent<AudioSource>();
         }
 
         private void OnEnable()
@@ -56,6 +62,7 @@ namespace Source.Enemy
                 return;
 
             _isPlayerVisible = true;
+            _audioSourceComponent.Play();
             GameEvents.RaiseCaught();
         }
 
