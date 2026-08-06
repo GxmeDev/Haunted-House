@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace Source.UI
@@ -16,6 +17,7 @@ namespace Source.UI
         public VisualElement DialogueBox { get; private set; }
         public Label CharacterNameLabel { get; private set; }
         public Label DialogueTextLabel { get; private set; }
+        public Button ReplayButton { get; private set; }
 
         private PanelRenderer _panelRendererComponent;
         private List<string> _dialogueText;
@@ -53,6 +55,11 @@ namespace Source.UI
             // A mid-dialogue scene teardown must not leave a dangling handler
             // on the shared Interact action; removing when absent is harmless.
             _interactAction.performed -= OnInteractPerformed;
+
+            // The button is only assigned once the UI has loaded, so it can
+            // still be null if the component is destroyed before that.
+            if (ReplayButton != null)
+                ReplayButton.clicked -= OnReplayClicked;
         }
 
         private void OnCaught()
@@ -72,6 +79,17 @@ namespace Source.UI
             DialogueBox = root.Q<VisualElement>("DialogueBox");
             CharacterNameLabel = root.Q<Label>("CharacterName");
             DialogueTextLabel = root.Q<Label>("DialogueText");
+
+            // Every reload delivers a fresh visual tree (and thus a fresh
+            // button instance), so the click handler must be re-attached here.
+            ReplayButton = EndScreen.Q<Button>("ReplayButton");
+            ReplayButton.clicked += OnReplayClicked;
+        }
+
+        private void OnReplayClicked()
+        {
+            // Restart the run by reloading whatever scene is currently active.
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         private void OnStartDialogue(string characterName, Color characterNameColor, List<string> dialogueText)
