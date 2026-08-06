@@ -1,0 +1,15 @@
+{
+    "asset": "ea38efedf54386f46b37c02c8e0c71f0",
+    "fileName": "019fd785-7ee4-7375-a8c3-a9bb6b479ad8.wav",
+    "prompt": "Door opening",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 2.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

@@ -10,11 +10,13 @@ namespace Source.Puzzle
 
         private Collider _colliderComponent;
         private MeshRenderer _meshRendererComponent;
+        private AudioSource _audioSourceComponent;
 
         private void Awake()
         {
             _colliderComponent = GetComponent<Collider>();
             _meshRendererComponent = GetComponent<MeshRenderer>();
+            _audioSourceComponent = GetComponent<AudioSource>();
         }
 
         private void OnEnable()
@@ -38,6 +40,10 @@ namespace Source.Puzzle
             // "Open" the door: stop blocking the player and hide the mesh.
             _colliderComponent.enabled = false;
             _meshRendererComponent.enabled = false;
+
+            // Only the collider and mesh are disabled above, so the source
+            // stays active and the open sound plays through to the end.
+            _audioSourceComponent.Play();
         }
 
         private void OnUnlock(KeySO keyData)
