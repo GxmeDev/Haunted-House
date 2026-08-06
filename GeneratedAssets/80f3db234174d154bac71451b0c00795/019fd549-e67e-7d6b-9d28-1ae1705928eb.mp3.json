@@ -1,0 +1,15 @@
+{
+    "asset": "80f3db234174d154bac71451b0c00795",
+    "fileName": "019fd549-e67e-7d6b-9d28-1ae1705928eb.mp3",
+    "prompt": "Haunted, spooky, fun, orchestra, no vocals.",
+    "negativePrompt": "",
+    "model": "google-lyria-3-pro",
+    "modelName": "Google Lyria 3 Pro",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": "Adam"
+}
